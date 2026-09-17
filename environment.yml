@@ -1,0 +1,21 @@
+name: cv_practice_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pillow=12.1
+  - pyyaml=6.0
+  - shapely=2.1
+  - opencv=4.13
+  - matplotlib
+  - onnx
+  - onnxruntime
+  - huggingface_hub
+  - pip
+  - pip:
+      - ultralytics==8.4.37
+
+# Install a CUDA-enabled PyTorch build separately for the target GPU and driver.
+# The development environment used PyTorch 2.11.0+cu130, but that wheel/runtime
+# combination is host-specific and should not be copied blindly to another system.

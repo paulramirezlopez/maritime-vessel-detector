@@ -1,0 +1,45 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Conda
+.conda/
+env/
+
+# Private data, annotations, and training artifacts. Only public-safe metadata is
+# deliberately unignored below; this does not alter existing tracked files.
+data/*
+!data/README.md
+!data/DATASET_REGENERATION.md
+!data/public_active_dataset_manifest.json
+datasets/
+models/
+*.weights
+*.pt
+*.onnx
+*.engine
+outputs/
+reports/
+
+# Local deployment, downloads, media, and mirror materializations
+ship-detector-api/.env
+ship-detector-api/.cache/
+ship-detector-api/__pycache__/
+hf_cache/
+downloads/
+videos/
+public_mirror/
+*_public_mirror/
+
+# OS
+.DS_Store
+Thumbs.db

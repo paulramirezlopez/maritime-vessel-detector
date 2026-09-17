@@ -1,0 +1,13 @@
+# Keep binary model and media artifacts out of text diffs if intentionally tracked.
+*.pt binary
+*.onnx binary
+*.engine binary
+*.mp4 binary
+*.avi binary
+*.mov binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.zip binary
+*.tar binary
+*.gz binary

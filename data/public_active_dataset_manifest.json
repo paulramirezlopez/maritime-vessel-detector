@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "public_summary": true,
+  "dataset_line": "audit_fixed_v2",
+  "tile_policy": "1024px grid-constrained fixed tiles with deterministic recovery tiles",
+  "annotation_coordinate_system": "YOLO OBB tile-local labels derived from parent-coordinate OBBs",
+  "training_policy": "v9 aggressive keep-bad filtering",
+  "split_policy": "existing train/validation membership; no test split",
+  "known_accepted_cautions": [
+    "intentional filtering exclusions",
+    "recovery-tile duplication cautions",
+    "valid large objects unrepresentable in a 1024px tile"
+  ],
+  "assets_included": false,
+  "regeneration_document": "DATASET_REGENERATION.md"
+}
