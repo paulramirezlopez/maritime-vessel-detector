@@ -1,6 +1,6 @@
 # Maritime Vessel Detection With Oriented Bounding Boxes
 
-This repository is the private development archive for an aerial and satellite
+This repository is the development archive for an aerial and satellite
 maritime vessel detector. The project combines DOTA, xView, and HRSC2016 imagery,
 manual annotation curation, ROI-aware fixed-window tiling, and YOLO OBB training.
 
@@ -76,11 +76,6 @@ See [active dataset operations](docs/active_dataset_operations.md) for the safe
 staging and validation sequence. See [scripts layout](scripts/README.md) for the
 current CLI taxonomy.
 
-## Public Mirror
-
-Use the allowlisted, dry-run-first workflow in
-[docs/public_mirror_plan.md](docs/public_mirror_plan.md). It creates a new public
-repository directory without changing this private archive or its Git history.
 
 ## Documentation
 
