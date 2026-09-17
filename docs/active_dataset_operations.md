@@ -89,14 +89,14 @@ python scripts/audit/audit_tile_coverage_recovery.py \
 Use the selected local recipe:
 
 ```bash
-conda run -n cv_practice_env python scripts/training/train_second_pass_obb.py \
+conda run -n maritime_vessel_detector_env python scripts/training/train_second_pass_obb.py \
   --config configs/training/active_second_pass_audit_fixed_1280_best_known.yaml
 ```
 
 To resume an interrupted run, use the same config and its `last.pt` checkpoint:
 
 ```bash
-conda run -n cv_practice_env python scripts/training/train_second_pass_obb.py \
+conda run -n maritime_vessel_detector_env python scripts/training/train_second_pass_obb.py \
   --config path/to/copied_experiment_config.yaml \
   --resume models/<project>/<run_name>/weights/last.pt \
   --allow-existing

@@ -198,7 +198,7 @@ def require_dependencies() -> dict[str, str]:
     except ImportError as error:
         raise RuntimeError(
             "The selected interpreter lacks an audit-fixed HPO dependency. "
-            "Activate cv_practice_env before running this command."
+            "Activate maritime_vessel_detector_env before running this command."
         ) from error
     return {"shapely": shapely.__version__, "torch": torch.__version__, "ultralytics": ultralytics.__version__}
 
@@ -594,7 +594,7 @@ The historical 1280 compact run is pre-audit evidence only. Its geometric augmen
 """
     (report_root / "experiment_plan.md").write_text(plan, encoding="utf-8")
 
-    smoke = ["# HPO Smoke Commands", "", "Run from the activated `cv_practice_env`. Each command runs two epochs and requires CUDA.", ""]
+    smoke = ["# HPO Smoke Commands", "", "Run from the activated `maritime_vessel_detector_env`. Each command runs two epochs and requires CUDA.", ""]
     smoke.extend(f"`python scripts/training/run_hyperparameter_tuning.py --phase smoke --variants {name}`" for name in ACTIVE_VARIANTS)
     (report_root / "smoke_commands.md").write_text("\n".join(smoke) + "\n", encoding="utf-8")
     full = [

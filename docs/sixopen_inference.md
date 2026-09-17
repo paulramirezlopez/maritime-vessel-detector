@@ -4,7 +4,7 @@ This is a focused local inference integration for `SixOpen/Y8NavalONNX`. It is n
 
 ## Environment
 
-Use the existing `cv_practice_env` Conda environment. It needs `onnx`, `onnxruntime-gpu`, and `huggingface_hub` in addition to the project's existing NumPy, Pillow, OpenCV, Ultralytics, and PyTorch packages.
+Use the existing `maritime_vessel_detector_env` Conda environment. It needs `onnx`, `onnxruntime-gpu`, and `huggingface_hub` in addition to the project's existing NumPy, Pillow, OpenCV, Ultralytics, and PyTorch packages.
 
 The model is cached at `models/pretrained_maritime/sixopen/model.onnx`. The companion `model_metadata.json` records the upstream filename, revision, commit, size, and SHA-256. The source class map is in `class_map.json`.
 
@@ -19,7 +19,7 @@ Original model classes are retained. Actual vessel classes normalize to `vessel`
 ## Inspect
 
 ```bash
-conda run -n cv_practice_env python -m scripts.inference.maritime_model_benchmark.inspect_sixopen_model
+conda run -n maritime_vessel_detector_env python -m scripts.inference.maritime_model_benchmark.inspect_sixopen_model
 ```
 
 The graph report is written to `outputs/pretrained_model_benchmark/sixopen/model_inspection.json`.
@@ -27,7 +27,7 @@ The graph report is written to `outputs/pretrained_model_benchmark/sixopen/model
 ## Smoke Test
 
 ```bash
-conda run -n cv_practice_env python -m scripts.inference.maritime_model_benchmark.run_sixopen_inference \
+conda run -n maritime_vessel_detector_env python -m scripts.inference.maritime_model_benchmark.run_sixopen_inference \
   --images-dir data/tiled/grid/current/images \
   --manifest data/tiled/grid/current/tile_parent_map.csv \
   --output-dir outputs/pretrained_model_benchmark/sixopen \
@@ -41,7 +41,7 @@ Each saved detection preserves tile-relative `obb` and `bbox_xyxy` values and pa
 For a different, reproducible sample, use a new output directory and select a seed:
 
 ```bash
-conda run -n cv_practice_env python -m scripts.inference.maritime_model_benchmark.run_sixopen_inference \
+conda run -n maritime_vessel_detector_env python -m scripts.inference.maritime_model_benchmark.run_sixopen_inference \
   --images-dir data/tiled/grid/current/images \
   --manifest data/tiled/grid/current/tile_parent_map.csv \
   --output-dir outputs/pretrained_model_benchmark/sixopen_random_20260719 \
@@ -54,7 +54,7 @@ conda run -n cv_practice_env python -m scripts.inference.maritime_model_benchmar
 Only run this deliberately after reviewing smoke outputs:
 
 ```bash
-conda run -n cv_practice_env python -m scripts.inference.maritime_model_benchmark.run_sixopen_inference \
+conda run -n maritime_vessel_detector_env python -m scripts.inference.maritime_model_benchmark.run_sixopen_inference \
   --images-dir data/tiled/grid/current/images \
   --manifest data/tiled/grid/current/tile_parent_map.csv \
   --output-dir outputs/pretrained_model_benchmark/sixopen \
@@ -68,7 +68,7 @@ conda run -n cv_practice_env python -m scripts.inference.maritime_model_benchmar
 To count SixOpen detections over every current grid tile without writing per-image detections, candidate files, previews, summaries, or any output directory, use count-only mode. `--max-images 0` means the full tile inventory in this mode. Include unlabeled tiles because they may contain vessels absent from the current annotations.
 
 ```bash
-conda run -n cv_practice_env python -m scripts.inference.maritime_model_benchmark.run_sixopen_inference \
+conda run -n maritime_vessel_detector_env python -m scripts.inference.maritime_model_benchmark.run_sixopen_inference \
   --images-dir data/tiled/grid/current/images \
   --manifest data/tiled/grid/current/tile_parent_map.csv \
   --count-only --max-images 0 --include-empty --no-smoke-selection \

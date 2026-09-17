@@ -14,7 +14,7 @@ Create the base environment with:
 
 ```bash
 conda env create -f environment.yml
-conda activate cv_practice_env
+conda activate maritime_vessel_detector_env
 ```
 
 The development environment used Python 3.12.13, Ultralytics 8.4.37, OpenCV 4.13.0,

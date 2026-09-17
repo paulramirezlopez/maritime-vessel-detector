@@ -21,7 +21,7 @@ are intentionally not committed.
 
    ```bash
    conda env create -f environment.yml
-   conda activate cv_practice_env
+   conda activate maritime_vessel_detector_env
    ```
 
 2. Install a CUDA-enabled PyTorch build appropriate for the target driver/GPU using
@@ -40,7 +40,7 @@ are intentionally not committed.
    training defaults:
 
    ```bash
-   conda run -n cv_practice_env python scripts/training/train_second_pass_obb.py \
+   conda run -n maritime_vessel_detector_env python scripts/training/train_second_pass_obb.py \
      --config configs/training/active_second_pass_audit_fixed_1280_best_known.yaml
    ```
 

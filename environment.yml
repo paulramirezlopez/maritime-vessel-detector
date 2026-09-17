@@ -1,4 +1,4 @@
-name: cv_practice_env
+name: maritime_vessel_detector_env
 channels:
   - conda-forge
 dependencies:
